@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+Template Name: Yeinydd
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+
+<head>
+    <title>AI Proxy fraud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="{{ url_for('static', filename='layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
+    <script src="{{ url_for('static', filename='layout/scripts/ajax.js') }}"></script>
+
+</head>
+
+
+<body id="top">
+
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- Top Background Image Wrapper -->
+    <div class="bgded overlay" style="background-image:url('../static/images/demo/backgrounds/001.jpg');">
+        <!-- ################################################################################################ -->
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+                <!-- ################################################################################################ -->
+                <div id="logo" class="fl_left">
+                    <h1><a href="/">AI fraud detector</a></h1>
+                </div>
+                <!-- ################################################################################################ -->
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <!-- <li class="active"><a href="/">Home</a></li> -->
+                        <li><a class="active" href="https://www.ptechpartners.com/post/proxy-interviews-and-fake-skype-calls-rising">? Fraud proxy interviews</a>
+                        </li>
+                        <!-- <li><a class="drop" href="/comingsoon">multipule predictions</a> -->
+
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+
+
+        <div id="pageintro" class="hoc clear">
+            <div id="progressBar">
+
+                <article>
+                    <h3 class="heading">Welcome to AI Proxy fraud detector </h3>
+
+                    <p>This AI powerd apllication will help you to find wether you interviewing a genuine or fraud candidate </p>
+
+                    <div id="loading" style="display: none;">
+
+                        <p>Please be patient it will take awhile to train an Artificial Neural Network (LSTM)</p>
+                    </div>
+                    <footer>
+
+                        <form class="group" method="post" action="/result">
+
+                            <img src="../static/images/mic.png" class="img-responsive" alt="">
+
+                            <!-- <input name="symbol" placeholder="Enter the sybol here"> -->
+
+                            <!-- <button class="fas fa-sign-in-alt" type="submit" title="Submit" onclick="loading();"><em>Submit</em></button> -->
+
+                            <button id="clickbtn" class="w3-button w3-green" onclick="move()" type="submit">Test</button>
+
+                        </form>
+                        <div class="progress">
+                            <!-- <div id="myBar" data-label="keep talking...." class="w3-green" style="height:24px;width:0"></div> -->
+                            <progress max="100" id="myBar" data-label="keep talking for one minute...." class="w3-green" style="height:24px;width:0;color: black;"></progress>
+                        </div>
+
+                    </footer>
+                </article>
+            </div>
+        </div>
+
+    </div>
+    </section>
+    </div>
+
+    </footer>
+    </div>
+    <!-- <script type="text/javascript" src="jquery-1.6.1.js"></script> -->
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+    <!-- JAVASCRIPTS -->
+    <style>
+        progress {
+            text-align: center;
+            height: 1.5em;
+            width: 100%;
+            -webkit-appearance: none;
+            border: none;
+            /* Set the progressbar to relative */
+            position: relative;
+        }
+        
+        progress:before {
+            content: attr(data-label);
+            font-size: 0.8em;
+            vertical-align: 0;
+            /*Position text over the progress bar */
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        
+        progress::-webkit-progress-bar {
+            background-color: #c9c9c9;
+        }
+        
+        progress::-webkit-progress-value {
+            background-color: #7cc4ff;
+        }
+        
+        progress::-moz-progress-bar {
+            background-color: #7cc4ff;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".progress").hide();
+        });
+        $("#clickbtn").click(function() {
+            $(".progress").show();
+        });
+
+
+        // <![CDATA[
+        function loading() {
+            $("#loading").show();
+            // $("#content").hide();
+        }
+        // ]]>
+
+        function progress(timeleft, timetotal, $element) {
+            var progressBarWidth = timeleft * $element.width() / timetotal;
+            $element
+                .find('div')
+                .animate({
+                    width: progressBarWidth
+                }, 500)
+                .html(timeleft + " seconds to go");
+            if (timeleft > 0) {
+                setTimeout(function() {
+                    progress(timeleft - 1, timetotal, $element);
+                }, 1000);
+            }
+        };
+
+        function move() {
+            var elem = document.getElementById("myBar");
+            var width = 1;
+            var id = setInterval(frame, 650);
+
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++;
+                    elem.style.width = width + '%';
+                }
+            }
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='layout/scripts/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='layout/scripts/jquery.backtotop.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='layout/scripts/jquery.mobilemenu.js') }}"></script>
+
+    <script src="{{ url_for('static', filename='layout/scripts/jquery-confirm.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout/styles/jquery-confirm.min.css') }}">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</body>
+
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.alert({
+            title: 'Alert!',
+            content: " NOTE :- 1.To test this model you have to record voice for one minute 2. this model perform better in silent environment  ",
+
+        });
+    });
+</script>

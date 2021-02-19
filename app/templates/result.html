@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+    <title>AI fraud detector</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="{{ url_for('static', filename='layout/styles/layout.css') }}" rel="stylesheet" type="text/css" media="all">
+
+</head>
+
+<body id="top">
+
+
+    <div class="bgded overlay" style="background-image:url('../static/images/demo/backgrounds/001.jpg');">
+
+        <div class="wrapper row1">
+            <header id="header" class="hoc clear">
+
+                <div id="logo" class="fl_left">
+                    <h1><a href="/">AI fraud ditectore</a></h1>
+                </div>
+
+                <nav id="mainav" class="fl_right">
+                    <ul class="clear">
+                        <li class="active"><a href="/">Home</a></li>
+
+                </nav>
+
+            </header>
+        </div>
+
+        <div id="pageintro" class="hoc clear">
+
+
+            <article>
+
+                <div class="chart">
+                    <div class=metanav>
+                        {% if result == "fraud" %}
+
+                        <h3 class="heading">{{ result }}</h3>
+
+                        <img src="../static/images/giphy_3.gif" class="img-responsive" alt="">
+
+                        <p> this candidate using proxy to answer your questions (some one talking through phone) </p>
+                        {% else %}
+
+
+
+                        <h3 class="heading">{{ result }}</h3>
+
+                        <img src="../static/images/giphy _1.gif" class="img-responsive" alt="">
+                        <p> this candidate is genuine ... </p>
+                        {% endif %}
+
+
+
+                    </div>
+            </article>
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+        <a id="backtotop " href="#top "><i class="fas fa-chevron-up "></i></a>
+        <!-- JAVASCRIPTS -->
+
+
+        <script src="{{ url_for( 'static', filename='layout/scripts/jquery.min.js' ) }} "></script>
+        <script src="{{ url_for( 'static', filename='layout/scripts/jquery.backtotop.js' ) }} "></script>
+        <script src="{{ url_for( 'static', filename='layout/scripts/jquery.mobilemenu.js' ) }} "></script>
+</body>
+
+</html>
