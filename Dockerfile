@@ -19,10 +19,9 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 RUN apt-get install -y ffmpeg libsm6 libxext6
 RUN apt-get install -y libsndfile1
 COPY ./requirements.txt /requirements.txt
-COPY ./app /app
 RUN pip3 install -r requirements.txt
 
 
-
+EXPOSE 5000
 
 WORKDIR /app

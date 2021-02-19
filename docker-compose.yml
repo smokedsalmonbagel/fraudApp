@@ -15,11 +15,14 @@ services:
           - ./conf.d:/etc/nginx/user.conf.d:ro
           - letsencrypt:/etc/letsencrypt
     app:
+        container_name: app
+        volumes:
+            - ./app:/app
         build:
           context: .
           dockerfile: Dockerfile
         command: ["python", "__init__.py"]
         ports:
-            - 5000:5000/tcp
+            - 5000:5000
 volumes:
     letsencrypt:

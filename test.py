@@ -12,4 +12,4 @@ def hello_name(name):
     return "Hello!"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host= '0.0.0.0')
