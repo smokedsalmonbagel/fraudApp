@@ -18,7 +18,7 @@ services:
         build:
           context: .
           dockerfile: Dockerfile
-        command: ./runserver.sh
+        command: ["python", "__init__.py"]
         ports:
             - 5000:5000/tcp
 volumes:
