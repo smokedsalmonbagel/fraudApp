@@ -122,7 +122,7 @@ startRecordingButton.addEventListener('click', function() {
             console.error(e);
         }
     );
-    setTimeout(() => stopRecording(), 60000);
+    setTimeout(() => stopRecording(), 10000);
 });
 
 const stopRecording = function() {
@@ -179,7 +179,16 @@ const stopRecording = function() {
     fetch("/rec", {
         method: "post",
         body: blob
-    });
+    }).then(function(data){
+			$('#resultbutton').attr('action', '/result/'+data);
+			console.log("response:" + data)
+		});
+ 
+  
+
+  
+  
+  
     // taken from download event listener function body
     if (blob == null) {
         return;

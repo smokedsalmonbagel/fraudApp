@@ -64,7 +64,7 @@ Licence URI: https://www.os-templates.com/template-terms
                     <div style="padding-top: 40px;">
                         <button id="startRecordingButton" class="w3-button w3-green" onclick="move()" type="submit">Start recording</button>
 
-                        <form class="group" method="post" action="/result">
+                        <form id="resultbutton" class="group" method="post" action="/result" style="display:none;">
 
                             <!-- <img src="../static/images/mic.png" class="img-responsive" alt=""> -->
 
@@ -159,7 +159,7 @@ Licence URI: https://www.os-templates.com/template-terms
                             );
                             setTimeout(() => stopRecording(), 60000);
                         });
-
+						
                         const stopRecording = function() {
                             // stop recording
                             recorder.disconnect(context.destination);
@@ -209,12 +209,17 @@ Licence URI: https://www.os-templates.com/template-terms
                             var url = URL.createObjectURL(blob);
                             console.log(url);
 
-                            console.log('fetcghing...')
+                            console.log('fetching...')
                                 // sends data to flask url /messages as a post with data blob - in format for wav file, hopefully. it is a promise
                             fetch("/rec", {
-                                method: "post",
-                                body: blob
-                            });
+								method: "post",
+								body: blob
+							}).then((resp) => resp.json())
+								.then(function(data){
+									$('#resultbutton').attr('action', '/result/'+data.uuid);
+									$('#resultbutton').show();
+									console.log("response:" + data.uuid)
+								});
                             // taken from download event listener function body
                             if (blob == null) {
                                 return;
